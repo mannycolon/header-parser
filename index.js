@@ -3,6 +3,10 @@ var app = express()
 
 var port = process.env.port || 8080;
 
+app.get('/', function(req, res){
+  res.send("Please got to the following pathname /api/whoami")
+})
+
 app.get('/api/whoami', function(req, res){
   var result = {
     ipaddress: req.headers['x-forwarded-for'] ||
