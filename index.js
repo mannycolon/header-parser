@@ -8,6 +8,7 @@ app.get('/', function(req, res){
 })
 
 app.get('/api/whoami', function(req, res){
+  if (req.url === '/favicon.ico') return;
   var result = {
     ipaddress: req.headers['x-forwarded-for'] ||
                req.connection.remoteAddress,
